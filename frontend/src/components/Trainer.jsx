@@ -1,32 +1,95 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { XMarkIcon } from '@heroicons/react/24/outline';
 
-const trainersData = [
-  { id: 1, name: 'Michael Scott', specialty: 'Strength Training', experience: '5 years' },
-  { id: 2, name: 'Pam Beesly', specialty: 'Yoga', experience: '3 years' },
-  { id: 3, name: 'Jim Halpert', specialty: 'Cardio', experience: '4 years' },
+const initialTrainers = [
+  { id: 1, name: 'Michael Scott' },
+  { id: 2, name: 'Pam Beesly' },
+  { id: 3, name: 'Jim Halpert' },
 ];
 
 const Trainer = () => {
+  const [trainers, setTrainers] = useState(initialTrainers);
+  const [showForm, setShowForm] = useState(false);
+  const [formData, setFormData] = useState({ name: '' });
+
+  // Handle input change
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  // Add new trainer and close form
+  const handleAddTrainer = () => {
+    if (!formData.name) return;
+    setTrainers([...trainers, { id: Date.now(), ...formData }]);
+    setFormData({ name: '' });
+    setShowForm(false);
+  };
+
   return (
-    <div className="p-6">
+    <div className="p-6 relative">
       {/* Header with Add Trainer button */}
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-2xl font-semibold text-gray-700">Trainers</h2>
-        <button className="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded shadow">
+        <button
+          onClick={() => setShowForm(true)}
+          className="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded shadow"
+        >
           + Add Trainer
         </button>
       </div>
 
       {/* Trainers grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {trainersData.map((trainer) => (
-          <div key={trainer.id} className="bg-white rounded-lg shadow p-4 hover:shadow-lg transition">
+        {trainers.map((trainer) => (
+          <div
+            key={trainer.id}
+            className="bg-white rounded-lg shadow p-4 hover:shadow-lg transition"
+          >
             <h3 className="text-xl font-bold text-gray-800">{trainer.name}</h3>
-            <p className="text-gray-500">Specialty: {trainer.specialty}</p>
-            <p className="text-gray-400 text-sm">Experience: {trainer.experience}</p>
           </div>
         ))}
       </div>
+
+      {/* Modal Form */}
+      {showForm && (
+        <div className="fixed inset-0 bg-opacity-40 flex justify-center items-center z-50">
+          <div className="bg-white bg-opacity-20 backdrop-filter backdrop-blur-lg rounded-lg p-6 w-full max-w-sm shadow-lg relative">
+
+            {/* Close Icon */}
+            <button
+              onClick={() => setShowForm(false)}
+              className="absolute top-3 right-3 text-white hover:text-gray-300 focus:outline-none"
+              aria-label="Close form"
+            >
+              <XMarkIcon className="h-6 w-6" />
+            </button>
+
+            <h3 className="text-xl font-semibold mb-4 text-white">Enter Name</h3>
+            <input
+              type="text"
+              name="name"
+              placeholder="Name"
+              className="w-full px-3 py-2 rounded bg-white bg-opacity-50 text-black border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-400"
+              value={formData.name}
+              onChange={handleChange}
+            />
+            <div className="mt-4 flex justify-end">
+              <button
+                onClick={() => setShowForm(false)}
+                className="bg-gray-300 hover:bg-gray-400 text-gray-900 font-semibold py-2 px-4 rounded mr-2"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={handleAddTrainer}
+                className="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded"
+              >
+                Add
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

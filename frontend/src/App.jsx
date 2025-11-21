@@ -5,6 +5,7 @@ import Member from './components/Member';
 import Trainer from './components/Trainer';
 import Assets from './components/Assets';
 import Enquiry from './components/Enquiry';
+import Dashboard from './components/Dashboard/Dashboard';
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
         <Sidebar />
         <main className="flex-grow p-4">
           <Routes>
+            <Route path="/" element={<Dashboard />} />
             <Route path="/members" element={<Member />} />
             <Route path="/trainers" element={<Trainer />} />
             <Route path="/assets" element={<Assets />} />
