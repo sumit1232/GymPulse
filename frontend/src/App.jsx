@@ -8,7 +8,7 @@ import Enquiry from './components/Enquiry';
 
 const App = () => {
   return (
-    <Router>
+    <BrowserRouter>    <Router>
       <div className="flex">
         <Sidebar />
         <main className="flex-grow p-4">
@@ -24,6 +24,7 @@ const App = () => {
         </main>
       </div>
     </Router>
+    </BrowserRouter>
   );
 };
 
