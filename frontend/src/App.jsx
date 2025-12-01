@@ -6,12 +6,14 @@ import Trainer from './components/Trainer';
 import Assets from './components/Assets';
 import Enquiry from './components/Enquiry';
 import Dashboard from './components/Dashboard/Dashboard';
+import Footer from './components/Footer';
 
 const App = () => {
   return (
     <BrowserRouter>
       <div className="flex">
         <Sidebar />
+        <Footer/>
         <main className="flex-grow p-4">
           <Routes>
             <Route path="/" element={<Dashboard />} />
