@@ -7,12 +7,14 @@ import Assets from './components/Assets';
 import Enquiry from './components/Enquiry';
 import Dashboard from './components/Dashboard/Dashboard';
 import Footer from './components/Footer';
+import Header from './components/Header';
 
 const App = () => {
   return (
     <BrowserRouter>
       <div className="flex">
         <Sidebar />
+        <Header />
         <Footer/>
         <main className="flex-grow p-4">
           <Routes>
