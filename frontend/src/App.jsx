@@ -17,6 +17,7 @@ import Profile from './components/Profile/Profile';
 import Editprofile from './components/Profile/Editprofile';
 import Changepassword from './components/Password/Changepassword';
 import Viewmember from './components/Member/Viewmember';
+import Footer from './components/Footer';
 
 const App = () => {
   return (
@@ -39,6 +40,8 @@ const App = () => {
       <Route path='/editprofile' element={<Editprofile/>} />
       <Route path='/changepassword' element={<Changepassword/>} />
       <Route path='/viewmember' element={<Viewmember/>} />
+      <Route path='/footer' element={<Footer/>} />
+
 
       
     </Routes>
