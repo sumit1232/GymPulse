@@ -1,9 +1,10 @@
 // src/pages/AddMember.jsx
 import axios from 'axios';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link,useNavigate  } from 'react-router-dom';
 
 const Addmember = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
   firstName: '',
   lastName: '',
@@ -28,6 +29,7 @@ alert('form submited..')
 e.preventDefault();
 await axios.post('http://localhost:3000/members',formData)
 console.log(formData);
+ navigate('/members');
 
 }
 
@@ -248,6 +250,7 @@ console.log(formData);
                   Cancel
                 </Link>
                 <button
+                href='/members'
                   type="submit"
                   className="px-8 py-3 bg-emerald-600 text-white font-medium rounded-xl hover:bg-emerald-700 transition-colors"
                 >

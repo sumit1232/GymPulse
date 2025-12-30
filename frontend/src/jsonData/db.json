@@ -233,6 +233,19 @@
       "emergencyContact": "+917123456782",
       "profilePhoto": null,
       "id": 20
+    },
+    {
+      "firstName": "Saurabh",
+      "lastName": "Magare",
+      "phone": "+918698016059",
+      "email": "magare964@gmail.com",
+      "dob": "2001-11-19",
+      "plan": "Basic - ₹999/month",
+      "joinDate": "2025-12-01",
+      "nextPayment": "2026-01-01",
+      "emergencyContact": "9099456361",
+      "profilePhoto": null,
+      "id": 21
     }
   ],
   "stats": {
