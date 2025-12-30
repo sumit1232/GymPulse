@@ -1,16 +1,22 @@
 // src/pages/Members.jsx
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../Navbar';
+import axios from 'axios'
 
 const Memberpage = () => {
-  const members = [
-    { id: 1, name: "Rahul Sharma", phone: "+91 98765 43210", email: "rahul@gym.com", joinDate: "2025-01-15", status: "Active", membership: "Premium", nextPayment: "2026-01-15" },
-    { id: 2, name: "Priya Singh", phone: "+91 87654 32109", email: "priya@gmail.com", joinDate: "2025-02-01", status: "Active", membership: "Basic", nextPayment: "2025-12-01" },
-    { id: 3, name: "Amit Patel", phone: "+91 76543 21098", email: "amit@yahoo.com", joinDate: "2025-03-10", status: "Inactive", membership: "Premium", nextPayment: "Overdue" },
-    { id: 4, name: "Neha Gupta", phone: "+91 65432 10987", email: "neha@outlook.com", joinDate: "2025-11-20", status: "Active", membership: "Basic", nextPayment: "2026-01-20" },
-    { id: 5, name: "Vikram Kumar", phone: "+91 54321 09876", email: "vikram@proton.me", joinDate: "2025-12-05", status: "Trial", membership: "Trial", nextPayment: "2025-12-20" },
-  ];
+const [members,setMembers] = useState([])
+
+  useEffect(()=>{
+    fetchData()
+  },[])
+
+  const fetchData = async() => {
+  const result = await axios.get('http://localhost:3000/members');
+  console.log(result.data);
+  setMembers(result.data)
+  }
+  
 
   return (
     <>
@@ -48,7 +54,7 @@ const Memberpage = () => {
           </select>
         </div>
       </div>
-
+      
       {/* Members List - Cards */}
       <div className="max-w-6xl mx-auto grid gap-6">
         {members.map((member) => (
@@ -58,11 +64,11 @@ const Memberpage = () => {
               <div className="flex items-start gap-4 flex-1">
                 <div className="w-14 h-14 bg-slate-700 rounded-xl flex items-center justify-center flex-shrink-0">
                   <div className="w-8 h-8 bg-gradient-to-r from-slate-400 to-slate-500 rounded-lg flex items-center justify-center">
-                    <span className="text-xs font-bold text-white">RS</span>
+                    <span className="text-xs font-bold text-white">::::</span>
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-white mb-1">{member.name}</h3>
+                  <h3 className="text-xl font-semibold text-white mb-1">{member.firstName}</h3>
                   <p className="text-slate-400 mb-2">{member.phone}</p>
                   <p className="text-slate-500 text-sm">{member.email}</p>
                 </div>
@@ -80,15 +86,15 @@ const Memberpage = () => {
                   member.status === 'Inactive' ? 'bg-red-500/10 text-red-400 border border-red-500/30' :
                   'bg-amber-500/10 text-amber-400 border border-amber-500/30'
                 }`}>
-                  {member.status}
+                  {member.isActive}
                 </div>
 
                 <div className={`px-3 py-1 rounded-full text-xs font-semibold ${
-                  member.membership === 'Premium' ? 'bg-purple-500/10 text-purple-400 border border-purple-500/30' :
-                  member.membership === 'Basic' ? 'bg-blue-500/10 text-blue-400 border border-blue-500/30' :
+                  member.plan === 'Premium' ? 'bg-purple-500/10 text-purple-400 border border-purple-500/30' :
+                  member.plan === 'Basic' ? 'bg-blue-500/10 text-blue-400 border border-blue-500/30' :
                   'bg-amber-500/10 text-amber-400 border border-amber-500/30'
                 }`}>
-                  {member.membership}
+                  {member.plan}
                 </div>
 
                 <div className={`font-semibold text-sm px-3 py-1 rounded-lg ${

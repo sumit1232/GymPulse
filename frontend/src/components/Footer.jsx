@@ -11,7 +11,7 @@ const [product,setproductData] = useState([])
 
     const fetchData = async () => {
         try {
-            const result = await axios.get('https://gympulse.onrender.com/about');
+            const result = await axios.get('http://localhost:3000/members');
             console.log('API fetch Success');
             console.log(result.data);
             setproductData(result.data)
@@ -27,7 +27,7 @@ Footer
 {product.map((val)=>(
     <div key={val.id}>
         <p>Hii {val.id}</p>
-        <p>{val.name}</p>
+        <p>{val.firstName}</p>
     </div>
 ))}
 
