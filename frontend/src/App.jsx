@@ -18,6 +18,7 @@ import Editprofile from './components/Profile/Editprofile';
 import Changepassword from './components/Password/Changepassword';
 import Footer from './components/Footer';
 import ViewMember from './components/Member/Viewmember';
+import Viewplan from './pages/Viewplan';
 
 const App = () => {
   return (
@@ -26,19 +27,33 @@ const App = () => {
     <Routes>
       <Route path='/' element={<Homepage/>} />
       <Route path='/login' element={<Login/>} />
+      
       <Route path='/register' element={<Register/>} />
+      
       <Route path='/dashboard' element={<Dashboard/>} />
+      
       <Route path='/members' element={<Memberpage/>} />
-      <Route path='/addmember' element={<Addmember/>} />
+      
+      <Route path='/addmember' element={<Addmember/>} /> 
+
       <Route path='/plans' element={<Plans/>} />
       <Route path='/addplans' element={<Addplan/>} />
+      <Route path='/viewplan/:id' element={<Viewplan/>} />
+
+      
       <Route path='/trainers' element={<Trainerpage/>} />
       <Route path='/addtrainers' element={<Addtrainer/>} />
+      
       <Route path='/attendance' element={<Attendence/>} />
+
       <Route path='/addattendance' element={<AddAttendance/>} />
+      
       <Route path='/profile' element={<Profile/>} />
+
       <Route path='/editprofile' element={<Editprofile/>} />
+      
       <Route path='/changepassword' element={<Changepassword/>} />
+      
       <Route path="/viewmember/:id" element={<ViewMember />} />
       <Route path='/footer' element={<Footer/>} />
 
