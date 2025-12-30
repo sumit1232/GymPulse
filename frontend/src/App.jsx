@@ -9,6 +9,13 @@ import Memberpage from './components/Member/Memberpage';
 import Addmember from './components/Member/Addmember';
 import Plans from './pages/Plans';
 import Addplan from './pages/Addplan';
+import Addtrainer from './components/Trainer/Addtrainer';
+import Trainerpage from './components/Trainer/Trainerpage';
+import Attendence from './components/Attendence';
+import AddAttendance from './components/AddAttendance';
+import Profile from './components/Profile/Profile';
+import Editprofile from './components/Profile/Editprofile';
+import Changepassword from './components/Password/Changepassword';
 
 const App = () => {
   return (
@@ -23,6 +30,20 @@ const App = () => {
       <Route path='/addmember' element={<Addmember/>} />
       <Route path='/plans' element={<Plans/>} />
       <Route path='/addplans' element={<Addplan/>} />
+      <Route path='/trainers' element={<Trainerpage/>} />
+      <Route path='/addtrainers' element={<Addtrainer/>} />
+      <Route path='/attendance' element={<Attendence/>} />
+      <Route path='/addattendance' element={<AddAttendance/>} />
+      <Route path='/profile' element={<Profile/>} />
+      <Route path='/editprofile' element={<Editprofile/>} />
+      <Route path='/changepassword' element={<Changepassword/>} />
+
+      
+
+
+
+
+
 
 
 

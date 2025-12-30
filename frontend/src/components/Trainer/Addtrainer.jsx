@@ -1,8 +1,8 @@
-// src/pages/AddMember.jsx
+// src/pages/AddTrainer.jsx
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
-const Addmember = () => {
+const AddTrainer = () => {
   return (
     <div className="min-h-screen bg-slate-900 p-8">
       <div className="max-w-2xl mx-auto">
@@ -10,7 +10,7 @@ const Addmember = () => {
         <div className="mb-12">
           <div className="flex items-center gap-3 mb-6">
             <Link
-              to="/members"
+              to="/trainers"
               className="p-2 text-slate-400 hover:text-white hover:bg-slate-800 rounded-xl transition-colors"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -18,8 +18,8 @@ const Addmember = () => {
               </svg>
             </Link>
             <div>
-              <h1 className="text-3xl font-bold text-white mb-1">Add Member</h1>
-              <p className="text-slate-400">Create a new member profile</p>
+              <h1 className="text-3xl font-bold text-white mb-1">Add Trainer</h1>
+              <p className="text-slate-400">Create a new trainer profile</p>
             </div>
           </div>
         </div>
@@ -40,7 +40,7 @@ const Addmember = () => {
                     type="text"
                     required
                     className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all"
-                    placeholder="Rahul"
+                    placeholder="Rohit"
                   />
                 </div>
 
@@ -52,7 +52,7 @@ const Addmember = () => {
                     type="text"
                     required
                     className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all"
-                    placeholder="Sharma"
+                    placeholder="Verma"
                   />
                 </div>
               </div>
@@ -62,7 +62,7 @@ const Addmember = () => {
                   Profile Photo
                 </label>
                 <div className="flex items-center gap-4">
-                  <div className="w-20 h-20 bg-gradient-to-br from-slate-600 to-slate-700 rounded-2xl flex items-center justify-center border-2 border-dashed border-slate-600 hover:border-emerald-500 transition-colors cursor-pointer">
+                  <div className="w-20 h-20 bg-gradient-to-br from-slate-600 to-slate-700 rounded-2xl flex items-center justify-center border-2 border-dashed border-slate-600 border-2 hover:border-emerald-500 transition-colors cursor-pointer">
                     <svg className="w-8 h-8 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                     </svg>
@@ -94,81 +94,64 @@ const Addmember = () => {
 
                 <div>
                   <label className="block text-sm font-medium text-slate-300 mb-2">
-                    Email Address
+                    Email Address *
                   </label>
                   <input
                     type="email"
+                    required
                     className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all"
-                    placeholder="rahul@gmail.com"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-slate-300 mb-2">
-                    Date of Birth
-                  </label>
-                  <input
-                    type="date"
-                    className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all"
+                    placeholder="rohit@gym.com"
                   />
                 </div>
               </div>
             </div>
 
-            {/* Membership Section */}
+            {/* Professional Section */}
             <div className="border-b border-slate-700 pb-8 mb-8">
-              <h3 className="text-xl font-semibold text-white mb-6">Membership Details</h3>
+              <h3 className="text-xl font-semibold text-white mb-6">Professional Details</h3>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-medium text-slate-300 mb-2">
-                    Plan *
+                    Specialty *
                   </label>
                   <select 
                     required
                     className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all"
                   >
-                    <option>Select plan</option>
-                    <option>Basic - ₹999/month</option>
-                    <option>Premium - ₹1,999/month</option>
-                    <option>Annual Premium - ₹18,999/year</option>
-                    <option>Trial - Free/7 days</option>
+                    <option>Select specialty</option>
+                    <option>Strength Training</option>
+                    <option>Yoga & Pilates</option>
+                    <option>Cardio & HIIT</option>
+                    <option>Weight Loss</option>
+                    <option>CrossFit</option>
+                    <option>Bodybuilding</option>
                   </select>
                 </div>
 
                 <div>
                   <label className="block text-sm font-medium text-slate-300 mb-2">
-                    Join Date *
+                    Experience
                   </label>
-                  <input
-                    type="date"
-                    required
-                    className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all"
-                  />
+                  <select className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all">
+                    <option>1 Year</option>
+                    <option>2 Years</option>
+                    <option>3 Years</option>
+                    <option>4 Years</option>
+                    <option>5+ Years</option>
+                  </select>
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-                <div>
-                  <label className="block text-sm font-medium text-slate-300 mb-2">
-                    Next Payment Date
-                  </label>
-                  <input
-                    type="date"
-                    className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-slate-300 mb-2">
-                    Emergency Contact
-                  </label>
-                  <input
-                    type="tel"
-                    className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all"
-                    placeholder="+91 98765 43211"
-                  />
-                </div>
+              <div className="mt-6">
+                <label className="block text-sm font-medium text-slate-300 mb-2">
+                  Certifications
+                </label>
+                <input
+                  type="text"
+                  className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all"
+                  placeholder="Ex: NASM, ACE, ISSA (comma separated)"
+                />
               </div>
             </div>
 
@@ -177,7 +160,6 @@ const Addmember = () => {
               <label className="flex items-center gap-3 text-sm font-medium text-slate-300">
                 <input
                   type="checkbox"
-                  checked
                   className="w-5 h-5 text-emerald-500 focus:ring-emerald-500 border-slate-600 rounded"
                 />
                 <span>Mark as Active</span>
@@ -185,7 +167,7 @@ const Addmember = () => {
 
               <div className="flex gap-4 ml-auto">
                 <Link
-                  to="/members"
+                  to="/trainers"
                   className="px-6 py-3 border border-slate-600 text-slate-300 font-medium rounded-xl hover:bg-slate-700 hover:border-slate-500 transition-colors"
                 >
                   Cancel
@@ -194,7 +176,7 @@ const Addmember = () => {
                   type="submit"
                   className="px-8 py-3 bg-emerald-600 text-white font-medium rounded-xl hover:bg-emerald-700 transition-colors"
                 >
-                  Save Member
+                  Save Trainer
                 </button>
               </div>
             </div>
@@ -205,4 +187,4 @@ const Addmember = () => {
   );
 };
 
-export default Addmember;
+export default AddTrainer;
