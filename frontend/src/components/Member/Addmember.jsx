@@ -1,9 +1,38 @@
 // src/pages/AddMember.jsx
-import React from 'react';
+import axios from 'axios';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Addmember = () => {
+  const [formData, setFormData] = useState({
+  firstName: '',
+  lastName: '',
+  phone: '',
+  email: '',
+  dob: '',
+  plan: '',
+  joinDate: '',
+  nextPayment: '',
+  emergencyContact: '',
+  profilePhoto: null
+});
+
+const handleformdata = (e) => {
+console.log(e.target.value);
+const {name,value} = e.target;
+setFormData({...formData,[name]:value});
+}
+
+const saveForm = async(e) => {
+alert('form submited..')
+e.preventDefault();
+await axios.post('http://localhost:3000/members',formData)
+console.log(formData);
+
+}
+
   return (
+    <>
     <div className="min-h-screen bg-slate-900 p-8">
       <div className="max-w-2xl mx-auto">
         {/* Header */}
@@ -26,7 +55,7 @@ const Addmember = () => {
 
         {/* Form Card */}
         <div className="bg-slate-800 border border-slate-700 rounded-2xl p-8">
-          <form className="space-y-6">
+          <form className="space-y-6" onSubmit={saveForm}>
             {/* Profile Section */}
             <div className="border-b border-slate-700 pb-8 mb-8">
               <h3 className="text-xl font-semibold text-white mb-6">Profile Information</h3>
@@ -38,9 +67,13 @@ const Addmember = () => {
                   </label>
                   <input
                     type="text"
+                    id='firstName'
+                    name='firstName'
+                    value={formData.firstName}
+                    onChange={handleformdata}
                     required
                     className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all"
-                    placeholder="Rahul"
+                    placeholder="Enter Your FirstName"
                   />
                 </div>
 
@@ -50,6 +83,10 @@ const Addmember = () => {
                   </label>
                   <input
                     type="text"
+                    id='lastName'
+                    name='lastName'
+                    value={formData.lastName}
+                    onChange={handleformdata}
                     required
                     className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all"
                     placeholder="Sharma"
@@ -73,6 +110,7 @@ const Addmember = () => {
                   </div>
                 </div>
               </div>
+
             </div>
 
             {/* Contact Section */}
@@ -86,6 +124,10 @@ const Addmember = () => {
                   </label>
                   <input
                     type="tel"
+                    name='phone'
+                    id='phone'
+                    value={formData.phone}
+                    onChange={handleformdata}
                     required
                     className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all"
                     placeholder="+91 98765 43210"
@@ -98,6 +140,10 @@ const Addmember = () => {
                   </label>
                   <input
                     type="email"
+                    id='email'
+                    name='email'
+                    value={formData.email}
+                    onChange={handleformdata}
                     className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all"
                     placeholder="rahul@gmail.com"
                   />
@@ -109,6 +155,10 @@ const Addmember = () => {
                   </label>
                   <input
                     type="date"
+                    id='dob'
+                    name='dob'
+                    value={formData.dob}
+                    onChange={handleformdata}
                     className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all"
                   />
                 </div>
@@ -125,7 +175,11 @@ const Addmember = () => {
                     Plan *
                   </label>
                   <select 
-                    required
+                  id='plan'
+                  name='plan'
+                  value={formData.plan}
+                  onChange={handleformdata}
+                  required
                     className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all"
                   >
                     <option>Select plan</option>
@@ -142,6 +196,10 @@ const Addmember = () => {
                   </label>
                   <input
                     type="date"
+                    id='joinDate'
+                    name='joinDate'
+                    value={formData.joinDate}
+                    onChange={handleformdata}
                     required
                     className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all"
                   />
@@ -155,6 +213,10 @@ const Addmember = () => {
                   </label>
                   <input
                     type="date"
+                    id='nextPayment'
+                    name='nextPayment'
+                    value={formData.nextPayment}
+                    onChange={handleformdata}
                     className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all"
                   />
                 </div>
@@ -165,6 +227,10 @@ const Addmember = () => {
                   </label>
                   <input
                     type="tel"
+                    id='emergencyContact'
+                    name='emergencyContact'
+                    value={formData.emergencyContact}
+                    onChange={handleformdata}
                     className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all"
                     placeholder="+91 98765 43211"
                   />
@@ -174,15 +240,6 @@ const Addmember = () => {
 
             {/* Status & Actions */}
             <div className="flex flex-col sm:flex-row gap-4 items-center pt-4">
-              <label className="flex items-center gap-3 text-sm font-medium text-slate-300">
-                <input
-                  type="checkbox"
-                  checked
-                  className="w-5 h-5 text-emerald-500 focus:ring-emerald-500 border-slate-600 rounded"
-                />
-                <span>Mark as Active</span>
-              </label>
-
               <div className="flex gap-4 ml-auto">
                 <Link
                   to="/members"
@@ -202,6 +259,7 @@ const Addmember = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

@@ -1,122 +1,100 @@
 {
-  "products": [
+  "members": [
     {
-      "id": 1,
-      "name": "Treadmill Pro X500",
-      "categoryId": 1,
-      "price": 45000,
-      "description": "Commercial grade treadmill with 15HP motor and 22\" touchscreen",
-      "image": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400",
-      "stock": 5,
-      "status": "active",
-      "discount": 10,
-      "createdAt": "2025-12-30T10:00:00Z"
+      "id": "M001",
+      "firstName": "Rahul",
+      "lastName": "Sharma",
+      "phone": "+919876543210",
+      "email": "rahul.sharma@gmail.com",
+      "dob": "1995-03-15",
+      "plan": "Premium - ₹1,999/month",
+      "joinDate": "2025-11-01",
+      "nextPayment": "2026-01-01",
+      "emergencyContact": "+919876543211",
+      "isActive": true,
+      "profilePhoto": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&fit=facecrop&auto=format&crop=face"
     },
     {
-      "id": 2,
-      "name": "Adjustable Dumbbell Set (20kg)",
-      "categoryId": 1,
-      "price": 12500,
-      "description": "Quick-change dumbbells 2.5-20kg per hand with ergonomic grip",
-      "image": "https://images.unsplash.com/photo-1608106247751-88e6d9df9e4f?w=400",
-      "stock": 12,
-      "status": "active",
-      "discount": 5,
-      "createdAt": "2025-12-30T10:05:00Z"
+      "id": "M002",
+      "firstName": "Priya",
+      "lastName": "Patel",
+      "phone": "+919812345678",
+      "email": "priya.patel@yahoo.com",
+      "dob": "1998-07-22",
+      "plan": "Basic - ₹999/month",
+      "joinDate": "2025-12-01",
+      "nextPayment": "2026-01-01",
+      "emergencyContact": "+919812345679",
+      "isActive": true,
+      "profilePhoto": "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=200&fit=facecrop&auto=format&crop=face"
     },
     {
-      "id": 3,
-      "name": "Whey Protein Isolate (2kg)",
-      "categoryId": 2,
-      "price": 4500,
-      "description": "24g protein per scoop, chocolate flavor, zero sugar",
-      "image": "https://images.unsplash.com/photo-1632884614558-5582ecc9fad6?w=400",
-      "stock": 25,
-      "status": "active",
-      "discount": 15,
-      "createdAt": "2025-12-30T10:10:00Z"
+      "id": "M003",
+      "firstName": "Amit",
+      "lastName": "Kumar",
+      "phone": "+918765432109",
+      "email": "",
+      "dob": "1992-11-10",
+      "plan": "Annual Premium - ₹18,999/year",
+      "joinDate": "2025-10-15",
+      "nextPayment": "2026-10-15",
+      "emergencyContact": "+918765432108",
+      "isActive": false,
+      "profilePhoto": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&fit=facecrop&auto=format&crop=face"
     },
     {
-      "id": 4,
-      "name": "Pre-Workout Energy (300g)",
-      "categoryId": 2,
-      "price": 1800,
-      "description": "300mg caffeine + beta-alanine formula, fruit punch flavor",
-      "image": "https://images.unsplash.com/photo-1627375898488-6f439f337639?w=400",
-      "stock": 18,
-      "status": "active",
-      "discount": 0,
-      "createdAt": "2025-12-30T10:15:00Z"
+      "id": "M004",
+      "firstName": "Neha",
+      "lastName": "Singh",
+      "phone": "+917890123456",
+      "email": "neha.singh@outlook.com",
+      "dob": "2000-05-08",
+      "plan": "Trial - Free/7 days",
+      "joinDate": "2025-12-25",
+      "nextPayment": "2025-12-30",
+      "emergencyContact": "+917890123457",
+      "isActive": true,
+      "profilePhoto": null
     },
     {
-      "id": 5,
-      "name": "Gym Towel Premium",
-      "categoryId": 3,
-      "price": 450,
-      "description": "Microfiber quick-dry towel with anti-microbial treatment",
-      "image": "https://images.unsplash.com/photo-1581686996647-57f4738e4ef8?w=400",
-      "stock": 50,
-      "status": "active",
-      "discount": 20,
-      "createdAt": "2025-12-30T10:20:00Z"
+      "id": "M005",
+      "firstName": "Vikram",
+      "lastName": "Reddy",
+      "phone": "+919234567890",
+      "email": "vikram.reddy@gmail.com",
+      "dob": "1988-09-30",
+      "plan": "Gold Membership (1 Year)",
+      "joinDate": "2025-09-01",
+      "nextPayment": "2026-09-01",
+      "emergencyContact": "+919234567891",
+      "isActive": true,
+      "profilePhoto": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&fit=facecrop&auto=format&crop=face"
     },
     {
-      "id": 6,
-      "name": "Gold Membership (1 Year)",
-      "categoryId": 4,
-      "price": 24000,
-      "description": "Unlimited access + 12 personal training sessions",
-      "image": "https://images.unsplash.com/photo-1574680178057-b997e3035ed2?w=400",
-      "stock": 30,
-      "status": "active",
-      "discount": 25,
-      "createdAt": "2025-12-30T10:25:00Z"
+      "id": "M9CNi0l"
+    },
+    {
+      "id": "TUBl3gS"
+    },
+    {
+      "firstName": "Saurabh",
+      "lastName": "Magare",
+      "phone": "+918698016059",
+      "email": "sumitjadav2525@gmail.com",
+      "dob": "2025-12-01",
+      "plan": "Basic - ₹999/month",
+      "joinDate": "2025-12-22",
+      "nextPayment": "2025-12-31",
+      "emergencyContact": "7549459874598",
+      "profilePhoto": null,
+      "id": "5sb7Q-p"
     }
   ],
-  "categories": [
-    {
-      "id": 1,
-      "name": "Equipment",
-      "icon": "🏋️‍♂️"
-    },
-    {
-      "id": 2,
-      "name": "Supplements",
-      "icon": "💊"
-    },
-    {
-      "id": 3,
-      "name": "Accessories",
-      "icon": "🧴"
-    },
-    {
-      "id": 4,
-      "name": "Memberships",
-      "icon": "⭐"
-    }
-  ],
-  "reviews": [
-    {
-      "id": 1,
-      "productId": 1,
-      "user": "Rahul Sharma",
-      "rating": 5,
-      "comment": "Best treadmill I've used! Smooth operation and great display.",
-      "createdAt": "2025-12-30T11:00:00Z"
-    },
-    {
-      "id": 2,
-      "productId": 3,
-      "user": "Priya Patel",
-      "rating": 4,
-      "comment": "Great taste and mixes well. Good protein content.",
-      "createdAt": "2025-12-30T11:15:00Z"
-    }
-  ],
-  "profile": {
-    "gymName": "Gym Pulse Fitness",
-    "owner": "Sumit Jadav",
-    "location": "Narnaund, Haryana",
-    "contact": "+91-XXXXXXXXXX"
+  "stats": {
+    "totalMembers": 5,
+    "activeMembers": 4,
+    "trialMembers": 1,
+    "expiredMembers": 1,
+    "revenueThisMonth": 5998
   }
 }
