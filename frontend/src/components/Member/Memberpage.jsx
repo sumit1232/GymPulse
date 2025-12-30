@@ -101,7 +101,8 @@ const Memberpage = () => {
               {/* Actions */}
               <div className="flex gap-2">
                 <Link
-                  to={`/members/${member.id}`}
+                  // to={`/members/${member.id}`}
+                  to={`/viewmember`}
                   className="p-3 text-emerald-400 hover:bg-emerald-500/10 rounded-xl transition-all"
                   title="View Details"
                 >

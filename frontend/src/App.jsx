@@ -16,6 +16,7 @@ import AddAttendance from './components/AddAttendance';
 import Profile from './components/Profile/Profile';
 import Editprofile from './components/Profile/Editprofile';
 import Changepassword from './components/Password/Changepassword';
+import Viewmember from './components/Member/Viewmember';
 
 const App = () => {
   return (
@@ -37,17 +38,7 @@ const App = () => {
       <Route path='/profile' element={<Profile/>} />
       <Route path='/editprofile' element={<Editprofile/>} />
       <Route path='/changepassword' element={<Changepassword/>} />
-
-      
-
-
-
-
-
-
-
-
-
+      <Route path='/viewmember' element={<Viewmember/>} />
 
       
     </Routes>
