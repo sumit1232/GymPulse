@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Just Do It. Nike.com</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <style>
+    :root {
+      --nike-black: #111111;
+      --nike-white: #ffffff;
+      --nike-red: #c8102e;
+      --nike-gray: #6f6f6f;
+    }
+    body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.6;
+    }
+    .nike-hero {
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1920&q=80');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      color: var(--nike-white);
+    }
+    .hero-content {
+      max-width: 600px;
+    }
+    .hero-content h1 {
+      font-size: clamp(3rem, 8vw, 7rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: -2px;
+      margin-bottom: 1rem;
+    }
+    .hero-content .lead {
+      font-size: 1.5rem;
+      font-weight: 300;
+    }
+    .product-card {
+      transition: transform 0.3s, box-shadow 0.3s;
+      overflow: hidden;
+    }
+    .product-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    }
+    .product-img {
+      height: 300px;
+      object-fit: cover;
+    }
+    .section-title {
+      font-size: 3rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .nav-link {
+      font-weight: 500;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
+    }
+    .nav-link:hover {
+      color: var(--nike-red) !important;
+    }
+    .btn-nike {
+      background: var(--nike-black);
+      border: none;
+      padding: 1rem 2rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s;
+    }
+    .btn-nike:hover {
+      background: var(--nike-red);
+      transform: translateY(-2px);
+    }
+    .category-card {
+      border: none;
+      background: transparent;
+    }
+    .category-card img {
+      height: 250px;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+    footer {
+      background: var(--nike-black);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-white shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold fs-3" href="#">
+        <img src="https://www.freepnglogos.com/uploads/nike-logo/nike-logo-nike-logo-png-transparent-svg-vector-6.png" height="40" alt="Nike">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nikeNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="nikeNav">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="#">Men</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Women</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Kids</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Sale</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">New</a></li>
+        </ul>
+        <div class="d-flex gap-3">
+          <a href="#" class="btn btn-link text-dark p-0"><i class="bi bi-search fs-5"></i></a>
+          <a href="#" class="btn btn-link text-dark p-0"><i class="bi bi-person fs-5"></i></a>
+          <a href="#" class="btn btn-link text-dark p-0"><i class="bi bi-bag fs-5"></i></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="nike-hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="mb-4">Just Do It.</h1>
+        <p class="lead mb-4">Find your greatness with Nike's latest collections.</p>
+        <a href="#products" class="btn btn-nike btn-lg">Shop Now</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="container py-5">
+
+    <!-- Categories -->
+    <section id="categories" class="text-center mb-5">
+      <h2 class="section-title mb-5">Shop by Category</h2>
+      <div class="row g-4">
+        <div class="col-lg-3 col-md-6">
+          <div class="card category-card border-0 h-100">
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Running">
+            <div class="card-body">
+              <h5 class="card-title">Running</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="card category-card border-0 h-100">
+            <img src="https://images.unsplash.com/photo-1543185926-d872b60f8b77?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Basketball">
+            <div class="card-body">
+              <h5 class="card-title">Basketball</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="card category-card border-0 h-100">
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Training">
+            <div class="card-body">
+              <h5 class="card-title">Training</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="card category-card border-0 h-100">
+            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Lifestyle">
+            <div class="card-body">
+              <h5 class="card-title">Lifestyle</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section id="products">
+      <h2 class="section-title text-center mb-5">Just In</h2>
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="card product-card h-100 shadow-sm">
+            <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=800&q=80" class="product-img card-img-top" alt="Air Max">
+            <div class="card-body">
+              <h5 class="card-title">Nike Air Max 90</h5>
+              <p class="text-muted mb-3">$150</p>
+              <a href="#" class="btn btn-nike w-100">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="card product-card h-100 shadow-sm">
+            <img src="https://images.unsplash.com/photo-1605348532760-6753d2c43329?auto=format&fit=crop&w=800&q=80" class="product-img card-img-top" alt="Dunk">
+            <div class="card-body">
+              <h5 class="card-title">Nike Dunk Low</h5>
+              <p class="text-muted mb-3">$120</p>
+              <a href="#" class="btn btn-nike w-100">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="card product-card h-100 shadow-sm">
+            <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=800&q=80" class="product-img card-img-top" alt="Pegasus">
+            <div class="card-body">
+              <h5 class="card-title">Nike Pegasus 41</h5>
+              <p class="text-muted mb-3">$140</p>
+              <a href="#" class="btn btn-nike w-100">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="card product-card h-100 shadow-sm">
+            <img src="https://images.unsplash.com/photo-1605348532760-6753d2c43329?auto=format&fit=crop&w=800&q=80" class="product-img card-img-top" alt="Jordan">
+            <div class="card-body">
+              <h5 class="card-title">Jordan 1 High</h5>
+              <p class="text-muted mb-3">$180</p>
+              <a href="#" class="btn btn-nike w-100">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="card product-card h-100 shadow-sm">
+            <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=800&q=80" class="product-img card-img-top" alt="Metcon">
+            <div class="card-body">
+              <h5 class="card-title">Nike Metcon 9</h5>
+              <p class="text-muted mb-3">$130</p>
+              <a href="#" class="btn btn-nike w-100">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="card product-card h-100 shadow-sm">
+            <img src="https://images.unsplash.com/photo-1605348532760-6753d2c43329?auto=format&fit=crop&w=800&q=80" class="product-img card-img-top" alt="VaporMax">
+            <div class="card-body">
+              <h5 class="card-title">Nike VaporMax</h5>
+              <p class="text-muted mb-3">$220</p>
+              <a href="#" class="btn btn-nike w-100">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="py-5 mt-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-3 col-md-6">
+          <h5 class="fw-bold mb-3">Get Help</h5>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-muted text-decoration-none">Order Status</a></li>
+            <li><a href="#" class="text-muted text-decoration-none">Shipping & Delivery</a></li>
+            <li><a href="#" class="text-muted text-decoration-none">Returns</a></li>
+            <li><a href="#" class="text-muted text-decoration-none">Gift Cards</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h5 class="fw-bold mb-3">Nike Membership</h5>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-muted text-decoration-none">Sign In</a></li>
+            <li><a href="#" class="text-muted text-decoration-none">Join Us</a></li>
+            <li><a href="#" class="text-muted text-decoration-none">Rewards</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h5 class="fw-bold mb-3">Get Connected</h5>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-muted text-decoration-none">Facebook</a></li>
+            <li><a href="#" class="text-muted text-decoration-none">Instagram</a></li>
+            <li><a href="#" class="text-muted text-decoration-none">Twitter</a></li>
+            <li><a href="#" class="text-muted text-decoration-none">YouTube</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h5 class="fw-bold mb-3">Nike Brands</h5>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-muted text-decoration-none">Jordan</a></li>
+            <li><a href="#" class="text-muted text-decoration-none">Converse</a></li>
+            <li><a href="#" class="text-muted text-decoration-none">Nike SB</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="my-4">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <p class="mb-0 text-muted">© 2026 Nike, Inc. All Rights Reserved</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <a href="#" class="text-muted text-decoration-none me-3">Guides</a>
+          <a href="#" class="text-muted text-decoration-none me-3">Terms of Sale</a>
+          <a href="#" class="text-muted text-decoration-none">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
