@@ -7,6 +7,7 @@ import {
   UserPlus,
   CalendarDays
 } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 const Dashboard = () => {
 
@@ -79,7 +80,8 @@ const Dashboard = () => {
 
           <button className="flex items-center gap-2 rounded-xl bg-lime-400 px-5 py-3 font-semibold text-slate-950 transition hover:bg-lime-300">
             <UserPlus size={20} />
-            Add Member
+           <Link to="/addenquiry">Add Enquiry
+           </Link>
           </button>
 
         </div>
