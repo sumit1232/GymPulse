@@ -15,6 +15,8 @@ import AddTrainer from './components/AddTrainer';
 import EditTrainer from './components/EditTrainer';
 import AddMember from './components/AddMember';
 import EditMember from './components/EditMember';
+import AddAssets from './components/AddAssets';
+import EditAssets from './components/EditAssets';
 
 const App = () => {
   return (
@@ -40,11 +42,17 @@ const App = () => {
           <Route path="/addmember" element={<AddMember />} />
           <Route path="/editMember" element={<EditMember />} />
 
-
-
-
-
+        // Assets
           <Route path="/assets" element={<Assets />} />
+          <Route path="/addassets" element={<AddAssets />} />
+          <Route path="/editassets" element={<EditAssets />} />
+
+
+
+        
+
+
+
           <Route path="/enquiry" element={<Enquiry/>} />  
           </Route>
 
