@@ -1,9 +1,9 @@
 import React from 'react'
 import {
   Users,
-  Dumbbell,
   Wallet,
-  TrendingUp,
+  IndianRupee,
+  AlertTriangle,
   UserPlus,
   CalendarDays
 } from 'lucide-react'
@@ -17,37 +17,46 @@ const Dashboard = () => {
       icon: <Users size={28} />,
     },
     {
-      title: 'Active Trainers',
-      value: '32',
-      icon: <Dumbbell size={28} />,
-    },
-    {
-      title: 'Monthly Revenue',
+      title: 'Fees Collected',
       value: '₹2,45,000',
       icon: <Wallet size={28} />,
     },
     {
-      title: 'New Enquiries',
-      value: '86',
-      icon: <TrendingUp size={28} />,
+      title: 'Pending Fees',
+      value: '₹48,000',
+      icon: <IndianRupee size={28} />,
+    },
+    {
+      title: 'Due Members',
+      value: '26',
+      icon: <AlertTriangle size={28} />,
     },
   ]
 
-  const recentMembers = [
+  const feeMembers = [
     {
       name: 'Rahul Sharma',
       plan: 'Premium Plan',
-      joinDate: '05 May 2026',
+      amount: '₹4,000',
+      status: 'Paid',
     },
     {
       name: 'Priya Patil',
-      plan: 'Basic Plan',
-      joinDate: '04 May 2026',
+      plan: 'Gold Plan',
+      amount: '₹3,000',
+      status: 'Pending',
     },
     {
       name: 'Aman Verma',
-      plan: 'Gold Plan',
-      joinDate: '03 May 2026',
+      plan: 'Basic Plan',
+      amount: '₹2,000',
+      status: 'Paid',
+    },
+    {
+      name: 'Sneha Joshi',
+      plan: 'Premium Plan',
+      amount: '₹4,000',
+      status: 'Pending',
     },
   ]
 
@@ -57,13 +66,14 @@ const Dashboard = () => {
 
         {/* Header */}
         <div className="mb-8 flex items-center justify-between">
+
           <div>
             <h1 className="text-4xl font-bold text-lime-400">
-              Dashboard
+              Member Fees Dashboard
             </h1>
 
             <p className="mt-2 text-slate-400">
-              Welcome back to Gym Management Admin Panel
+              Manage member fee payments and records
             </p>
           </div>
 
@@ -71,6 +81,7 @@ const Dashboard = () => {
             <UserPlus size={20} />
             Add Member
           </button>
+
         </div>
 
         {/* Stats Cards */}
@@ -106,26 +117,29 @@ const Dashboard = () => {
         {/* Bottom Section */}
         <div className="mt-8 grid gap-6 lg:grid-cols-3">
 
-          {/* Recent Members */}
+          {/* Fees Table */}
           <div className="lg:col-span-2 rounded-2xl border border-white/10 bg-white/5 p-6 shadow-xl backdrop-blur-sm">
 
             <div className="mb-6 flex items-center justify-between">
+
               <h2 className="text-2xl font-bold text-lime-400">
-                Recent Members
+                Recent Fee Payments
               </h2>
 
               <button className="text-sm text-lime-400 hover:text-lime-300">
                 View All
               </button>
+
             </div>
 
             <div className="space-y-4">
 
-              {recentMembers.map((member, index) => (
+              {feeMembers.map((member, index) => (
                 <div
                   key={index}
                   className="flex items-center justify-between rounded-xl border border-white/10 bg-slate-900 p-4"
                 >
+
                   <div>
                     <h3 className="font-semibold">
                       {member.name}
@@ -136,13 +150,29 @@ const Dashboard = () => {
                     </p>
                   </div>
 
-                  <div className="text-sm text-slate-400">
-                    {member.joinDate}
+                  <div className="text-center">
+                    <p className="font-semibold text-lime-400">
+                      {member.amount}
+                    </p>
                   </div>
+
+                  <div>
+                    <span
+                      className={`rounded-full px-3 py-1 text-xs font-semibold ${
+                        member.status === 'Paid'
+                          ? 'bg-green-500/20 text-green-400'
+                          : 'bg-red-500/20 text-red-400'
+                      }`}
+                    >
+                      {member.status}
+                    </span>
+                  </div>
+
                 </div>
               ))}
 
             </div>
+
           </div>
 
           {/* Quick Actions */}
@@ -160,18 +190,18 @@ const Dashboard = () => {
               </button>
 
               <button className="flex w-full items-center gap-3 rounded-xl bg-slate-900 p-4 transition hover:bg-white/10">
-                <Dumbbell size={22} className="text-lime-400" />
-                Add Trainer
+                <Wallet size={22} className="text-lime-400" />
+                Collect Fees
               </button>
 
               <button className="flex w-full items-center gap-3 rounded-xl bg-slate-900 p-4 transition hover:bg-white/10">
                 <CalendarDays size={22} className="text-lime-400" />
-                Manage Schedule
+                Renew Membership
               </button>
 
               <button className="flex w-full items-center gap-3 rounded-xl bg-slate-900 p-4 transition hover:bg-white/10">
-                <Wallet size={22} className="text-lime-400" />
-                View Payments
+                <AlertTriangle size={22} className="text-lime-400" />
+                Pending Payments
               </button>
 
             </div>

@@ -13,6 +13,8 @@ import PageNotFound from './components/PageNotFound';
 import Sidebar from './components/Sidebar';
 import AddTrainer from './components/AddTrainer';
 import EditTrainer from './components/EditTrainer';
+import AddMember from './components/AddMember';
+import EditMember from './components/EditMember';
 
 const App = () => {
   return (
@@ -33,9 +35,15 @@ const App = () => {
           <Route path="/addtrainer" element={<AddTrainer/>} />
           <Route path="/editTrainer" element={<EditTrainer/>} />
 
-
-
+          //Members
           <Route path="/member" element={<Member />} />
+          <Route path="/addmember" element={<AddMember />} />
+          <Route path="/editMember" element={<EditMember />} />
+
+
+
+
+
           <Route path="/assets" element={<Assets />} />
           <Route path="/enquiry" element={<Enquiry/>} />  
           </Route>
