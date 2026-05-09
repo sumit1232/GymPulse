@@ -26,6 +26,16 @@
       "trainersalary": "20000",
       "trainerAddress": "KHED DIGAR RAIKHED",
       "id": 1
+    },
+    {
+      "trainername": "Sumit Jadhav",
+      "traineremail": "sumitjadav2525@gmail.com",
+      "trainerphone": "08698016059",
+      "trainerexperience": "3",
+      "trainerSpecialty": "Cardio Expert",
+      "trainersalary": "2900",
+      "trainerAddress": "pune",
+      "id": 2
     }
   ],
   "member": [
@@ -36,50 +46,38 @@
       "memberAge": "22",
       "memberGender": "Male",
       "memberPlan": "Basic Plan",
-      "membershipDuration": "1 Month",
+      "membershipDuration": "3 Months",
       "feesAmount": "3000",
       "paymentStatus": "Paid",
-      "joinDate": "2026-05-09",
-      "memberAddress": "KHED DIGAR RAIKHED",
+      "joinDate": "2026-05-18",
+      "memberAddress": "pune",
       "id": 1
     }
   ],
   "assets": [
     {
       "assetName": "xyz",
-      "assetsCategory": "",
-      "assetsQuantity": "23",
-      "assetsPurchaseDate": "",
-      "assetsCondition": "",
-      "assetsPrice": "22",
-      "vendorName": "sdf",
-      "assetsWarranty": "2",
-      "assetsDescription": "ddss",
-      "id": 1
-    },
-    {
-      "assetName": "xyz",
-      "assetsCategory": "Strength Equipment",
-      "assetsQuantity": "22",
-      "assetsPurchaseDate": "2026-05-13",
+      "assetsCategory": "Cardio Equipment",
+      "assetsQuantity": "19998",
+      "assetsPurchaseDate": "2026-05-14",
       "assetsCondition": "Excellent",
-      "assetsPrice": "22",
+      "assetsPrice": "220",
       "vendorName": "sdf",
-      "assetsWarranty": "2",
-      "assetsDescription": "ss",
-      "id": 2
+      "assetsWarranty": "8",
+      "assetsDescription": "nnvvg",
+      "id": 1
     }
   ],
   "enquiry": [
     {
-      "fullName": "Sumit Jadhav",
+      "fullName": "Saurabh Magare",
       "emailAddress": "sumitjadav2525@gmail.com",
       "phoneNumber": "08698016059",
       "enquiryType": "Personal Training",
-      "status": "Resolved",
-      "followUpDate": "2026-05-21",
-      "enquiryMessage": "dd",
-      "id": 1
+      "status": "Pending",
+      "followUpDate": "2026-05-18",
+      "enquiryMessage": "sss",
+      "id": 2
     }
   ]
 }
