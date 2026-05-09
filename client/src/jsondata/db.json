@@ -1,0 +1,85 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "trainer": [
+    {
+      "trainername": "Sumit Jadhav",
+      "traineremail": "sumitjadav2525@gmail.com",
+      "trainerphone": "08698016059",
+      "trainerexperience": "3",
+      "trainerSpecialty": "Yoga Trainer",
+      "trainersalary": "20000",
+      "trainerAddress": "KHED DIGAR RAIKHED",
+      "id": 1
+    }
+  ],
+  "member": [
+    {
+      "memberName": "Sumit Jadhav",
+      "memberEmail": "sumitjadav2525@gmail.com",
+      "memberPhone": "08698016059",
+      "memberAge": "22",
+      "memberGender": "Male",
+      "memberPlan": "Basic Plan",
+      "membershipDuration": "1 Month",
+      "feesAmount": "3000",
+      "paymentStatus": "Paid",
+      "joinDate": "2026-05-09",
+      "memberAddress": "KHED DIGAR RAIKHED",
+      "id": 1
+    }
+  ],
+  "assets": [
+    {
+      "assetName": "xyz",
+      "assetsCategory": "",
+      "assetsQuantity": "23",
+      "assetsPurchaseDate": "",
+      "assetsCondition": "",
+      "assetsPrice": "22",
+      "vendorName": "sdf",
+      "assetsWarranty": "2",
+      "assetsDescription": "ddss",
+      "id": 1
+    },
+    {
+      "assetName": "xyz",
+      "assetsCategory": "Strength Equipment",
+      "assetsQuantity": "22",
+      "assetsPurchaseDate": "2026-05-13",
+      "assetsCondition": "Excellent",
+      "assetsPrice": "22",
+      "vendorName": "sdf",
+      "assetsWarranty": "2",
+      "assetsDescription": "ss",
+      "id": 2
+    }
+  ],
+  "enquiry": [
+    {
+      "fullName": "Sumit Jadhav",
+      "emailAddress": "sumitjadav2525@gmail.com",
+      "phoneNumber": "08698016059",
+      "enquiryType": "Personal Training",
+      "status": "Resolved",
+      "followUpDate": "2026-05-21",
+      "enquiryMessage": "dd",
+      "id": 1
+    }
+  ]
+}

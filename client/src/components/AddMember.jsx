@@ -1,8 +1,65 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { ArrowLeft } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 
 const AddMember = () => {
+  const [member, setMember] = useState({
+    memberName: '',
+    memberEmail: '',
+    memberPhone: '',
+    memberAge: '',
+    memberGender: '',
+    memberPlan: '',
+    membershipDuration: '',
+    feesAmount: '',
+    paymentStatus: '',
+    joinDate: '',
+    memberAddress: ''
+  })
+
+  const Handledata = (e) => {
+    const { name, value } = e.target
+    setMember({ ...member, [name]: value })
+  }
+
+  const saveform = async(e) => {
+    e.preventDefault();
+   await addMemberData()
+
+  }
+
+  const addMemberData = async () => {
+    try {
+
+      const result = await axios.post(
+        'http://localhost:3000/member',
+        member
+      )
+
+      console.log(result)
+
+      alert('Member Added Successfully')
+
+      setMember({
+        memberName: '',
+        memberEmail: '',
+        memberPhone: '',
+        memberAge: '',
+        memberGender: '',
+        memberPlan: '',
+        membershipDuration: '',
+        feesAmount: '',
+        paymentStatus: '',
+        joinDate: '',
+        memberAddress: ''
+      })
+
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   return (
     <>
       <div className="min-h-screen bg-slate-950 px-4 py-10 text-white">
@@ -34,7 +91,7 @@ const AddMember = () => {
           </div>
 
           {/* Form */}
-          <form className="grid gap-6 md:grid-cols-2">
+          <form className="grid gap-6 md:grid-cols-2" onSubmit={saveform}>
 
             {/* Full Name */}
             <div>
@@ -44,6 +101,10 @@ const AddMember = () => {
 
               <input
                 type="text"
+                id='memberName'
+                name='memberName'
+                value={member.memberName}
+                onChange={(e) => Handledata(e)}
                 placeholder="Enter full name"
                 className="w-full rounded-xl border border-white/10 bg-slate-900 px-4 py-3 text-white outline-none placeholder:text-slate-400 focus:border-lime-400"
               />
@@ -57,6 +118,10 @@ const AddMember = () => {
 
               <input
                 type="email"
+                id='memberEmail'
+                name='memberEmail'
+                value={member.memberEmail}
+                onChange={(e) => Handledata(e)}
                 placeholder="Enter email address"
                 className="w-full rounded-xl border border-white/10 bg-slate-900 px-4 py-3 text-white outline-none placeholder:text-slate-400 focus:border-lime-400"
               />
@@ -70,6 +135,10 @@ const AddMember = () => {
 
               <input
                 type="text"
+                id='memberPhone'
+                name='memberPhone'
+                value={member.memberPhone}
+                onChange={(e) => Handledata(e)}
                 placeholder="Enter phone number"
                 className="w-full rounded-xl border border-white/10 bg-slate-900 px-4 py-3 text-white outline-none placeholder:text-slate-400 focus:border-lime-400"
               />
@@ -83,6 +152,10 @@ const AddMember = () => {
 
               <input
                 type="number"
+                id='memberAge'
+                name='memberAge'
+                value={member.memberAge}
+                onChange={(e) => Handledata(e)}
                 placeholder="Enter age"
                 className="w-full rounded-xl border border-white/10 bg-slate-900 px-4 py-3 text-white outline-none placeholder:text-slate-400 focus:border-lime-400"
               />
@@ -94,10 +167,17 @@ const AddMember = () => {
                 Gender
               </label>
 
-              <select className="w-full rounded-xl border border-white/10 bg-slate-900 px-4 py-3 text-white outline-none focus:border-lime-400">
-                <option>Male</option>
-                <option>Female</option>
-                <option>Other</option>
+              <select className="w-full rounded-xl border border-white/10 bg-slate-900 px-4 py-3 text-white outline-none focus:border-lime-400"
+                id='memberGender'
+                name='memberGender'
+                value={member.memberGender}
+                onChange={(e) => Handledata(e)}
+                required
+              >
+                <option value="">Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
               </select>
             </div>
 
@@ -107,10 +187,17 @@ const AddMember = () => {
                 Membership Plan
               </label>
 
-              <select className="w-full rounded-xl border border-white/10 bg-slate-900 px-4 py-3 text-white outline-none focus:border-lime-400">
-                <option>Basic Plan</option>
-                <option>Gold Plan</option>
-                <option>Premium Plan</option>
+              <select className="w-full rounded-xl border border-white/10 bg-slate-900 px-4 py-3 text-white outline-none focus:border-lime-400"
+                id='memberPlan'
+                name='memberPlan'
+                value={member.memberPlan}
+                onChange={(e) => Handledata(e)}
+                required
+              >
+                <option value="">Select Plan</option>
+                <option value="Basic Plan">Basic Plan</option>
+                <option value="Gold Plan">Gold Plan</option>
+                <option value="Premium Plan">Premium Plan</option>
               </select>
             </div>
 
@@ -120,11 +207,18 @@ const AddMember = () => {
                 Membership Duration
               </label>
 
-              <select className="w-full rounded-xl border border-white/10 bg-slate-900 px-4 py-3 text-white outline-none focus:border-lime-400">
-                <option>1 Month</option>
-                <option>3 Months</option>
-                <option>6 Months</option>
-                <option>12 Months</option>
+              <select className="w-full rounded-xl border border-white/10 bg-slate-900 px-4 py-3 text-white outline-none focus:border-lime-400"
+                id='membershipDuration'
+                name='membershipDuration'
+                value={member.membershipDuration}
+                onChange={(e) => Handledata(e)}
+                required
+              >
+                <option value="">Select Duration</option>
+                <option value="1 Month">1 Month</option>
+                <option value="3 Months">3 Months</option>
+                <option value="6 Months">6 Months</option>
+                <option value="12 Months">12 Months</option>
               </select>
             </div>
 
@@ -136,6 +230,10 @@ const AddMember = () => {
 
               <input
                 type="text"
+                id='feesAmount'
+                name='feesAmount'
+                value={member.feesAmount}
+                onChange={(e) => Handledata(e)}
                 placeholder="Enter fees amount"
                 className="w-full rounded-xl border border-white/10 bg-slate-900 px-4 py-3 text-white outline-none placeholder:text-slate-400 focus:border-lime-400"
               />
@@ -147,9 +245,16 @@ const AddMember = () => {
                 Payment Status
               </label>
 
-              <select className="w-full rounded-xl border border-white/10 bg-slate-900 px-4 py-3 text-white outline-none focus:border-lime-400">
-                <option>Paid</option>
-                <option>Pending</option>
+              <select className="w-full rounded-xl border border-white/10 bg-slate-900 px-4 py-3 text-white outline-none focus:border-lime-400"
+                id='paymentStatus'
+                name='paymentStatus'
+                value={member.paymentStatus}
+                onChange={(e) => Handledata(e)}
+                required
+              >
+                <option value="">Select Payment Status</option>
+                <option value="Paid">Paid</option>
+                <option value="Pending">Pending</option>
               </select>
             </div>
 
@@ -161,6 +266,10 @@ const AddMember = () => {
 
               <input
                 type="date"
+                id='joinDate'
+                name='joinDate'
+                value={member.joinDate}
+                onChange={(e) => Handledata(e)}
                 className="w-full rounded-xl border border-white/10 bg-slate-900 px-4 py-3 text-white outline-none focus:border-lime-400"
               />
             </div>
@@ -174,6 +283,10 @@ const AddMember = () => {
               <textarea
                 rows="4"
                 placeholder="Enter address"
+                id='memberAddress'
+                name='memberAddress'
+                value={member.memberAddress}
+                onChange={(e) => Handledata(e)}
                 className="w-full rounded-xl border border-white/10 bg-slate-900 px-4 py-3 text-white outline-none placeholder:text-slate-400 focus:border-lime-400"
               ></textarea>
             </div>
@@ -192,9 +305,9 @@ const AddMember = () => {
                 type="button"
                 className="rounded-xl border border-white/10 bg-slate-900 px-6 py-3 font-semibold text-white transition hover:bg-white/10"
               >
-                 <Link to="/member">
-                                Cancel
-                                </Link>
+                <Link to="/member">
+                  Cancel
+                </Link>
               </button>
 
             </div>

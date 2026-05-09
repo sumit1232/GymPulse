@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {
   Plus,
   Pencil,
   Trash2
 } from 'lucide-react'
+import axios from 'axios'
 
 const Trainer = () => {
 
@@ -37,6 +38,14 @@ const Trainer = () => {
       phone: '+91 9876543213',
     },
   ]
+
+  const fetchData = async() =>{
+    const result = await axios.get('http://localhost:3000/comments')
+    console.log(result.data);
+  }
+
+  useEffect(()=>{
+    fetchData(),[]})
 
   return (
     <>

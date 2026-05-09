@@ -1,8 +1,64 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { ArrowLeft } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 
 const AddAssets = () => {
+
+    const [asset, setAsset] = useState({
+        assetName: '',
+        assetsCategory: '',
+        assetsQuantity: '',
+        assetsPurchaseDate: '',
+        assetsCondition: '',
+        assetsPrice: '',
+        vendorName: '',
+        assetsWarranty: '',
+        assetsDescription: ''
+    })
+
+    const Handledata = (e) => {
+        const { name, value } = e.target
+        setAsset({ ...asset, [name]: value })
+    }
+
+    const saveform = async (e) => {
+        e.preventDefault();
+        await addAssetsData()
+
+    }
+
+    const addAssetsData = async () => {
+        try {
+
+            const result = await axios.post(
+                'http://localhost:3000/assets',
+                asset
+            )
+
+            console.log(result)
+
+            alert('Assets Added Successfully')
+
+            setAsset({
+                assetName: '',
+                assetsCategory: '',
+                assetsQuantity: '',
+                assetsPurchaseDate: '',
+                assetsCondition: '',
+                assetsPrice: '',
+                vendorName: '',
+                assetsWarranty: '',
+                assetsDescription: ''
+            })
+
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+
+
     return (
         <>
             <div className="min-h-screen bg-slate-950 px-4 py-10 text-white">
@@ -34,7 +90,7 @@ const AddAssets = () => {
                     </div>
 
                     {/* Form */}
-                    <form className="grid gap-6 md:grid-cols-2">
+                    <form className="grid gap-6 md:grid-cols-2" onSubmit={saveform}>
 
                         {/* Asset Name */}
                         <div>
@@ -44,6 +100,10 @@ const AddAssets = () => {
 
                             <input
                                 type="text"
+                                id='assetName'
+                                name='assetName'
+                                value={asset.assetName}
+                                onChange={(e) => Handledata(e)}
                                 placeholder="Enter asset name"
                                 className="w-full rounded-xl border border-white/10 bg-slate-900 px-4 py-3 text-white outline-none placeholder:text-slate-400 focus:border-lime-400"
                             />
@@ -55,11 +115,18 @@ const AddAssets = () => {
                                 Category
                             </label>
 
-                            <select className="w-full rounded-xl border border-white/10 bg-slate-900 px-4 py-3 text-white outline-none focus:border-lime-400">
-                                <option>Cardio Equipment</option>
-                                <option>Strength Equipment</option>
-                                <option>Accessories</option>
-                                <option>Machines</option>
+                            <select className="w-full rounded-xl border border-white/10 bg-slate-900 px-4 py-3 text-white outline-none focus:border-lime-400"
+                                id='assetsCategory'
+                                name='assetsCategory'
+                                value={asset.assetsCategory}
+                                onChange={(e) => Handledata(e)}
+                                required
+                            >
+                                <option value="">Select Category</option>
+                                <option value="Cardio Equipment">Cardio Equipment</option>
+                                <option value="Strength Equipment">Strength Equipment</option>
+                                <option value="Accessories">Accessories</option>
+                                <option value="Machines">Machines</option>
                             </select>
                         </div>
 
@@ -71,6 +138,10 @@ const AddAssets = () => {
 
                             <input
                                 type="number"
+                                id='assetsQuantity'
+                                name='assetsQuantity'
+                                value={asset.assetsQuantity}
+                                onChange={(e) => Handledata(e)}
                                 placeholder="Enter quantity"
                                 className="w-full rounded-xl border border-white/10 bg-slate-900 px-4 py-3 text-white outline-none placeholder:text-slate-400 focus:border-lime-400"
                             />
@@ -84,6 +155,10 @@ const AddAssets = () => {
 
                             <input
                                 type="date"
+                                id='assetsPurchaseDate'
+                                name='assetsPurchaseDate'
+                                value={asset.assetsPurchaseDate}
+                                onChange={(e) => Handledata(e)}
                                 className="w-full rounded-xl border border-white/10 bg-slate-900 px-4 py-3 text-white outline-none focus:border-lime-400"
                             />
                         </div>
@@ -94,10 +169,17 @@ const AddAssets = () => {
                                 Condition
                             </label>
 
-                            <select className="w-full rounded-xl border border-white/10 bg-slate-900 px-4 py-3 text-white outline-none focus:border-lime-400">
-                                <option>Excellent</option>
-                                <option>Good</option>
-                                <option>Maintenance</option>
+                            <select className="w-full rounded-xl border border-white/10 bg-slate-900 px-4 py-3 text-white outline-none focus:border-lime-400"
+                                id='assetsCondition'
+                                name='assetsCondition'
+                                value={asset.assetsCondition}
+                                onChange={(e) => Handledata(e)}
+                                required
+                            >
+                                <option value="">Select Condition</option>
+                                <option value="Excellent">Excellent</option>
+                                <option value="Good">Good</option>
+                                <option value="Maintenance">Maintenance</option>
                             </select>
                         </div>
 
@@ -109,6 +191,10 @@ const AddAssets = () => {
 
                             <input
                                 type="text"
+                                id='assetsPrice'
+                                name='assetsPrice'
+                                value={asset.assetsPrice}
+                                onChange={(e) => Handledata(e)}
                                 placeholder="Enter asset price"
                                 className="w-full rounded-xl border border-white/10 bg-slate-900 px-4 py-3 text-white outline-none placeholder:text-slate-400 focus:border-lime-400"
                             />
@@ -122,6 +208,10 @@ const AddAssets = () => {
 
                             <input
                                 type="text"
+                                id='vendorName'
+                                name='vendorName'
+                                value={asset.vendorName}
+                                onChange={(e) => Handledata(e)}
                                 placeholder="Enter vendor name"
                                 className="w-full rounded-xl border border-white/10 bg-slate-900 px-4 py-3 text-white outline-none placeholder:text-slate-400 focus:border-lime-400"
                             />
@@ -135,6 +225,10 @@ const AddAssets = () => {
 
                             <input
                                 type="text"
+                                id='assetsWarranty'
+                                name='assetsWarranty'
+                                value={asset.assetsWarranty}
+                                onChange={(e) => Handledata(e)}
                                 placeholder="Example: 2 Years"
                                 className="w-full rounded-xl border border-white/10 bg-slate-900 px-4 py-3 text-white outline-none placeholder:text-slate-400 focus:border-lime-400"
                             />
@@ -148,6 +242,10 @@ const AddAssets = () => {
 
                             <textarea
                                 rows="4"
+                                id='assetsDescription'
+                                name='assetsDescription'
+                                value={asset.assetsDescription}
+                                onChange={(e) => Handledata(e)}
                                 placeholder="Enter asset description"
                                 className="w-full rounded-xl border border-white/10 bg-slate-900 px-4 py-3 text-white outline-none placeholder:text-slate-400 focus:border-lime-400"
                             ></textarea>
